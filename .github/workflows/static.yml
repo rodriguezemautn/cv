@@ -1,25 +1,31 @@
 name: Deploy static content to GitHub Pages
 
+# Permisos a nivel de workflow
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  deployments: write # Añadimos este permiso
+
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
+    permissions: # Permisos explícitos para el job
+      contents: read
+      pages: write
+      id-token: write
+      deployments: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,13 +33,27 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
-          enablement: true  # Habilita explícitamente Pages
+          enablement: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    permissions: # Permisos explícitos para el deployment
+      pages: write
+      id-token: write
+      deployments: write
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
