@@ -348,7 +348,7 @@
 </head>
 <body>
     <!-- Botón de alternar tema -->
-    <button class="theme-toggle" onclick="toggleTheme()" style="position: fixed; top: 1rem; right: 1rem; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; border: none; background: var(--primary-color); color: var(--card-bg); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+    <button class="theme-toggle" onclick="toggleTheme()" style="position: fixed; top: 1rem; left: 1rem; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; border: none; background: var(--primary-color); color: var(--card-bg); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
         <i id="theme-icon" class="fas fa-moon"></i>
     </button>
 
@@ -378,8 +378,8 @@
         <header class="header">
             <div class="header-left">
                 <h1 class="name">Emanuel Rodriguez</h1>
-                <div class="title">Systems Engineer / Site Reliability Engineer</div>
-                <p>Ingeniero en Sistemas con especialización en desarrollo de software y operaciones de infraestructura.</p>
+                <div class="title">Site Reliability Engineer (SRE) y Especialista en Infraestructura</div>
+                <p>Soy un profesional de sistemas (a punto de graduarme como Ingeniero) con más de 15 años trabajando en infraestructura y operaciones. Me especializo en mantener sistemas críticos funcionando de manera confiable. Durante mi carrera, he aprendido a implementar soluciones con Kubernetes, Docker y herramientas de automatización que realmente hacen la diferencia en entornos exigentes.</p>
             </div>
             <div class="header-right">
                 <a href="mailto:emanuelrodriguez644@gmail.com" class="contact-item">
@@ -407,6 +407,21 @@
                 Competencias Técnicas
             </h2>
             <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <i class="fas fa-server "></i>
+                        Sistemas Operativos / Hipervisores
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Linux (Debian, Ubuntu, Suse, RHEL)</span>
+                        <span class="skill-item">Windows Server</span>
+                        <span class="skill-item">VMWare</span>
+                        <span class="skill-item">Citrix Xen/XCP</span>
+                        <span class="skill-item">AD</span>
+                        <span class="skill-item">Failover Cluster</span>
+                    </div>
+                </div>
+            
                 <div class="skill-card">
                     <div class="skill-title">
                         <i class="fas fa-laptop-code"></i>
@@ -441,6 +456,21 @@
                         <span class="skill-item">Docker</span>
                         <span class="skill-item">Ansible</span>
                         <span class="skill-item">CI/CD</span>
+                        <span class="skill-item">BCM Control - M</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <i class="fas fa-gauge"></i>
+                        Observabilidad & Gestión
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Zabbix</span>
+                        <span class="skill-item">Prometheus</span>
+                        <span class="skill-item">Grafana</span>
+                        <span class="skill-item">Redmine</span>
+                        <span class="skill-item">ServiceNow</span>
                     </div>
                 </div>
 
@@ -465,6 +495,7 @@
                     <div class="skill-list">
                         <span class="skill-item">HTTPS/SSL</span>
                         <span class="skill-item">TCP/IP</span>
+                        <span class="skill-item">DNS</span>
                         <span class="skill-item">Firewall</span>
                     </div>
                 </div>
@@ -515,7 +546,8 @@
             <div class="experience-item">
                 <div class="job-title">Site Reliability Engineer (SRE) - Nivel 1</div>
                 <div class="job-company">Banco Galicia (vía Consultora VOOLKIA)</div>
-                <div class="job-date">Abril 2023 - Presente</div>
+                <div class="job-date">Marzo 2023 - Presente</div>
+                <p className="italic text-gray-600 mb-2">En mi rol actual, gestiono y controlo la infraestructura crítica de servidores productivos en ambientes de Rango Medio, asegurando la disponibilidad continua de los servicios bancarios esenciales.</p>
                 <ul class="achievement-list">
                     <li>Gestión y operación de sistemas críticos bancarios en entornos Windows Server y Linux/Unix, manteniendo un SLA > 99.9% en servicios core del banco</li>
                     <li>Implementación de automatizaciones para tareas repetitivas reduciendo el tiempo de respuesta en un 40% mediante PowerShell y Bash scripting</li>
@@ -528,9 +560,10 @@
             <div class="experience-item">
                 <div class="job-title">Site Reliability Engineer (SRE)</div>
                 <div class="job-company">Ministerio de Salud de la Provincia de Buenos Aires (PNUD)</div>
-                <div class="job-date">Abril 2022 - 2024</div>
+                <div class="job-date">Abril 2022 - 2025</div>
+                <p className="italic text-gray-600 mb-2">Actualmente formo parte de la modernización de infraestructura para servicios críticos de seguridad, enfocándome en la mejora continua y trabajo en equipo.</p>
                 <ul class="achievement-list">
-                    <li>Lideré la implementación y gestión de plataforma de contenedores con Kubernetes/Docker, logrando un 99.9% de disponibilidad en servicios críticos de salud</li>
+                    <li>Formé parte en la implementación y gestión de plataforma de contenedores con Kubernetes/Docker, logrando un 99.9% de disponibilidad en servicios críticos de salud</li>
                     <li>Diseñé e implementé soluciones de monitoreo proactivo con Zabbix y Prometheus, reduciendo el MTTR en un 45% para incidentes críticos</li>
                     <li>Desarrollé scripts de automatización en Python y Bash que redujeron en un 60% el tiempo de despliegue y configuración de nuevos servicios</li>
                     <li>Gestioné la infraestructura de más de 300 servidores Windows/Linux, implementando mejores prácticas de seguridad y alta disponibilidad</li>
@@ -540,7 +573,7 @@
             </div>
 
             <div class="experience-item">
-                <div class="job-title">Systems Administrator</div>
+                <div class="job-title">Técnico en Sistemas</div>
                 <div class="job-company">CAM Computación</div>
                 <div class="job-date">2007 - 2021</div>
                 <ul class="achievement-list">
